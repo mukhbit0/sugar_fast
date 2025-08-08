@@ -1,0 +1,22 @@
+name: sugar_fast_example
+description: Example app for sugar_fast
+publish_to: "none"
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  sugar_fast:
+    path: ../
+  flutter_riverpod: ^2.4.9
+  riverpod_sugar: ^1.0.9
+
+
+dev_dependencies:
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true

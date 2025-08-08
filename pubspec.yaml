@@ -1,0 +1,24 @@
+name: sugar_fast
+description: Ultra-fast Flutter widgets with full feature parity and Riverpod integration. Skip rebuilds, boost performance, and keep all the features you love.
+version: 1.0.0
+homepage: https://github.com/mukhbit0/sugar_fast
+repository: https://github.com/mukhbit0/sugar_fast
+issue_tracker: https://github.com/mukhbit0/sugar_fast/issues
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.4.9
+  riverpod_sugar: ^1.0.9
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  lint: ^2.1.2
+
+flutter:
+  uses-material-design: true
