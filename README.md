@@ -1162,6 +1162,9 @@ copies or substantial portions of the Software.
 ## 📞 **Support & Community**
 
 - **📚 Documentation**: [sugar-fast.dev](https://sugar-fast.dev)
+- **🏗️ Technical Architecture**: [TECHNICAL_ARCHITECTURE.md](TECHNICAL_ARCHITECTURE.md)
+- **📊 Performance Benchmarks**: [BENCHMARKS.md](BENCHMARKS.md)
+- **⚖️ Limitations & Trade-offs**: [LIMITATIONS.md](LIMITATIONS.md)
 - **🐛 Issues**: [GitHub Issues](https://github.com/mukhbit0/sugar_fast/issues)
 - **💬 Discussions**: [GitHub Discussions](https://github.com/mukhbit0/sugar_fast/discussions)  
 - **📧 Email**: mukhbit000@google.com
