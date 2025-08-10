@@ -1,6 +1,6 @@
 name: sugar_fast
-description: Ultra-fast Flutter widgets with full feature parity and Riverpod integration. Skip rebuilds, boost performance, and keep all the features you love.
-version: 1.1.0
+description: Revolutionary Flutter developer tooling for live state editing and debugging. Real-time Riverpod state management with in-app dev panel and scenario testing.
+version: 2.0.0
 homepage: https://github.com/mukhbit0/sugar_fast
 repository: https://github.com/mukhbit0/sugar_fast
 issue_tracker: https://github.com/mukhbit0/sugar_fast/issues
@@ -25,7 +25,7 @@ flutter:
 
 topics:
   - flutter
-  - performance
-  - widgets
-  - modular
+  - developer-tools
+  - debugging
+  - state-management
   - riverpod
