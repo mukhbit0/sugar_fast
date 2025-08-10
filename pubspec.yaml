@@ -1,9 +1,10 @@
 name: sugar_fast
-description: Revolutionary Flutter developer tooling for live state editing and debugging. Real-time Riverpod state management with in-app dev panel and scenario testing.
+description: The ultimate Flutter development hub - A meta-package that brings together the entire Sugar ecosystem for super-fast development. Import once, get everything.
 version: 2.0.0
 homepage: https://github.com/mukhbit0/sugar_fast
 repository: https://github.com/mukhbit0/sugar_fast
 issue_tracker: https://github.com/mukhbit0/sugar_fast/issues
+documentation: https://github.com/mukhbit0/sugar_fast/wiki
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -12,8 +13,20 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_riverpod: ^2.4.9
+    
+  # SUGAR ECOSYSTEM DEPENDENCIES
+  # The hub package bundles these individual Sugar packages:
+  
+  # State Management & Riverpod utilities
   riverpod_sugar: ^1.0.9
+  flutter_riverpod: ^2.4.9
+  go_router_sugar: ^1.2.0
+  
+  # TODO: Add individual Sugar packages as they're created:
+    # sugar_ui: ^1.0.0            # Pre-built UI components
+  # sugar_connect: ^1.0.0       # HTTP/API utilities
+  # sugar_themer: ^1.0.0        # Advanced theming system
+  # sugar_slices: ^1.0.0        # Enhanced state management
 
 dev_dependencies:
   flutter_test:
@@ -25,7 +38,7 @@ flutter:
 
 topics:
   - flutter
+  - meta-package
   - developer-tools
-  - debugging
   - state-management
-  - riverpod
+  - productivity

@@ -1,246 +1,174 @@
-# 🍭 Sugar Fast: Live State Editing
+# 🍭 Sugar Fast - Flutter Development Hub
 
 [![pub package](https://img.shields.io/pub/v/sugar_fast.svg)](https://pub.dev/packages/sugar_fast)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Flutter](https://img.shields.io/badge/Flutter-3.0%2B-blue.svg)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.0%2B-blue.svg)](https://dart.dev)
 
-**🔥 Revolutionary Flutter Developer Tooling: Real-time State Editing & Debugging!**
+**Sugar Fast** is a comprehensive meta-package that brings together the entire Sugar ecosystem for super-fast Flutter development. Instead of managing multiple dependencies, install once and get access to everything you need.
 
-Transform your Flutter development workflow with **live state editing**, **scenario testing**, and **time-travel debugging** for Riverpod applications. No more `print` statements or rebuilding to test different states!
-
-## 🌟 **Why Sugar Fast Will Change Your Development**
-
-### **The Problem with Traditional Flutter Debugging**
-- **Manual state setup** for testing different scenarios 📉
-- **Endless rebuilds** to test edge cases ⚠️  
-- **Print-based debugging** that clutters your code 🐌
-- **No way to share exact app states** with teammates 💾
-
-### **The Sugar Fast Solution**
-- **Edit state in real-time** without code changes ⚡
-- **Save and load state scenarios** for instant testing 🎨
-- **Share exact bug states** with your team 🚫🔄
-- **Time-travel through state changes** for debugging 🏗️
-
-## 🎯 **Live State Editing Features**
-
-### **📱 In-App Developer Panel**
-
-- **🎚️ Real-time State Editor** - Edit any Riverpod provider value instantly
-- **🔍 Smart Search** - Find providers by name or type quickly
-- **💾 State Snapshots** - Save/load complete app states
-- **📋 One-click Sharing** - Copy state to clipboard for team sharing
-- **🎯 Type-safe Editing** - Handles strings, numbers, booleans, maps, and lists
-
-### **🛠️ Advanced Developer Tools**
-
-- **⏱️ State History** - Track all state changes with timestamps
-- **🔎 Provider Analytics** - See which providers update most frequently
-- **📊 State Validation** - Detect non-serializable or problematic states
-- **🧪 Scenario Testing** - Create named test scenarios for common use cases
-
-## 🚀 **Quick Start**
-
-### **1. Installation**
+## 🎯 **One Package, Everything Included**
 
 ```yaml
 dependencies:
-  sugar_fast: ^2.0.0
-  flutter_riverpod: ^2.4.9
+  sugar_fast: ^2.0.0  # Gets you EVERYTHING
 ```
 
-### **2. Initialize Sugar Fast**
-
 ```dart
-import 'package:sugar_fast/sugar_fast.dart';
+import 'package:sugar_fast/sugar_fast.dart';  // One import for all Sugar features
 
 void main() {
-  // Initialize Sugar Fast (automatically enabled in debug mode only)
-  SugarFast.init(enableDevPanel: true);
-  
+  SugarFast.initialize();
   runApp(MyApp());
 }
 ```
 
-### **3. Wrap Your App**
+## 🧩 **What's Included**
+
+| Package | Status | Description |
+|---------|--------|-------------|
+| 🍰 **Riverpod Sugar** | ✅ Available | Enhanced Riverpod utilities and helpers |
+| 🧩 **Sugar UI** | 🚧 Coming Soon | Pre-built, customizable widgets |
+| 🔗 **Sugar Connect** | 🚧 Coming Soon | HTTP/API utilities and networking |
+| 🎨 **Sugar Themer** | 🚧 Coming Soon | Advanced theming and styling system |
+| 🍰 **Sugar Slices** | 🚧 Coming Soon | Enhanced Riverpod state management |
+
+## 🚀 **Quick Start**
+
+### 1. Install
+
+```bash
+flutter pub add sugar_fast
+```
+
+### 2. Initialize
 
 ```dart
-class MyApp extends StatelessWidget {
+import 'package:sugar_fast/sugar_fast.dart';
+import 'package:flutter/foundation.dart';
+
+void main() {
+  SugarFast.initialize(
+    devMode: kDebugMode,
+  );
+  runApp(MyApp());
+}
+```
+
+### 3. Use Everything
+
+```dart
+class MyWidget extends ConsumerWidget {
   @override
-  Widget build(BuildContext context) {
-    return SugarApp(  // 🍭 Sugar Fast wrapper
-      child: MaterialApp(
-        home: HomePage(),
-      ),
-    );
+  Widget build(BuildContext context, WidgetRef ref) {
+    // Use Riverpod Sugar (currently available)
+    final user = ref.watch(userProvider);
+    
+    // Coming soon: Use other Sugar packages
+    // return SugarCard(child: ...);        // Sugar UI
+    // return SugarTheme.dark(child: ...);  // Sugar Themer
+    // ApiClient.get('/users');             // Sugar Connect
+    
+    return Text('Hello ${user.name}');
   }
 }
 ```
 
-### **4. Start Editing State Live! 🎉**
+## 🎛️ **Individual Packages (Advanced Users)**
 
-1. Run your app in debug mode
-2. Look for the **floating purple gear button** 🟣
-3. Tap it to open the **Sugar Fast dev panel**
-4. **Edit any provider state in real-time!**
+Need fine-grained control? Install individual packages:
 
-## 🎮 **Usage Examples**
-
-### **Basic State Editing**
-
-```dart
-// Your providers (no changes needed!)
-final counterProvider = StateProvider<int>((ref) => 0);
-final messageProvider = StateProvider<String>((ref) => 'Hello World');
-final userProvider = StateProvider<User>((ref) => User());
-
-// Sugar Fast automatically tracks these providers
-// Edit them live in the dev panel! 🎯
+```yaml
+dependencies:
+  riverpod_sugar: ^1.0.9     # State management only
+  # sugar_ui: ^1.0.0         # UI components only (coming soon)
+  # sugar_connect: ^1.0.0    # API utilities only (coming soon)
+  # sugar_themer: ^1.0.0     # Theming only (coming soon)
 ```
 
-### **Complex State Scenarios**
+## 📚 **Documentation**
 
-```dart
-// Create complex test scenarios
-final userProvider = StateProvider<Map<String, dynamic>>((ref) => {
-  'name': 'John Doe',
-  'email': 'john@example.com',
-  'isPremium': false,
-  'settings': {
-    'darkMode': true,
-    'notifications': false,
-  }
-});
+- **[Riverpod Sugar Docs](https://pub.dev/packages/riverpod_sugar)** - Available now
+- **Sugar UI Docs** - Coming soon
+- **Sugar Connect Docs** - Coming soon  
+- **Sugar Themer Docs** - Coming soon
 
-// Test different user scenarios instantly:
-// - Premium vs Free user
-// - Different settings combinations
-// - Edge cases like empty names
-// All without changing code! 🔥
-```
+## 🗺️ **Development Roadmap**
 
-### **Sharing Bug States**
+### Phase 1 - State Management ✅
+- [x] Riverpod Sugar integration
+- [x] Hub package structure
+- [x] Unified initialization
 
-```dart
-// When you find a bug:
-// 1. Tap "Save" in Sugar Fast panel
-// 2. State is copied to clipboard as JSON
-// 3. Share with teammate
-// 4. They load it with "Load" button
-// 5. Bug reproduced instantly! 🐛➜✅
-```
+### Phase 2 - UI Components 🚧
+- [ ] Sugar UI package
+- [ ] Pre-built widgets
+- [ ] Customizable components
 
-## 🏗️ **Advanced Features**
+### Phase 3 - Networking & APIs 🚧
+- [ ] Sugar Connect package
+- [ ] HTTP utilities
+- [ ] API helpers
 
-### **State Scenarios for Testing**
+### Phase 4 - Theming & Design 🚧
+- [ ] Sugar Themer package
+- [ ] Advanced theming system
+- [ ] Design tokens
 
-```dart
-// Save named scenarios programmatically
-final scenario = SugarStateManager.createScenario(
-  'Premium User Bug',
-  description: 'User with premium account seeing free content',
-);
+## 🌟 **Why Use Sugar Fast?**
 
-// Apply scenarios in tests
-SugarStateManager.applyScenario(scenario, ref);
-```
+### **Single Dependency**
+Instead of managing multiple packages, add one dependency and get access to the entire Sugar ecosystem.
 
-### **Provider Analytics**
+### **Unified API**
+All Sugar packages work together seamlessly with consistent APIs and patterns.
 
-```dart
-// Get insights about your state
-final summary = SugarStateManager.getStateSummary();
-print('Providers: ${summary.providerCount}');
-print('Last update: ${summary.lastUpdateTime}');
+### **Future-Proof**
+As new Sugar packages are released, they're automatically included in Sugar Fast updates.
 
-// Find specific provider types
-final stringProviders = SugarStateManager.findProvidersByType<String>();
-```
+### **Optional Granularity**
+Need fine control? You can still install individual packages separately.
 
-### **State Validation**
+## 📦 **Package Details**
 
-```dart
-// Check for problematic state
-final issues = SugarStateManager.validateState();
-if (issues.isNotEmpty) {
-  print('State issues found: $issues');
-}
-```
+### **Current Size**
+- **Riverpod Sugar**: Enhanced state management utilities
 
-## 🎯 **Perfect for These Use Cases**
-
-- **🐛 Bug Reproduction** - Save exact state when bug occurs, share with team
-- **🧪 Feature Testing** - Test edge cases without manual setup
-- **📱 UI Development** - See how UI responds to different data instantly
-- **🔄 State Debugging** - Track exactly how state changes over time
-- **👥 Team Collaboration** - Share complex app states effortlessly
-- **🚀 QA Testing** - Create test scenarios that mimic production data
-
-## 🛡️ **Production Safety**
-
-- **Debug-only by default** - Automatically disabled in release builds
-- **Zero performance impact** in production
-- **No code changes required** for existing Riverpod apps
-- **Optional initialization** - Works with existing ProviderScope setups
-
-## 🌐 **Supported Provider Types**
-
-| Provider Type | Live Editing | Notes |
-|---------------|--------------|-------|
-| `StateProvider` | ✅ Full Support | All value types |
-| `StateNotifierProvider` | 🔄 Coming Soon | Complex state objects |
-| `FutureProvider` | 👀 Read-only | View async states |
-| `StreamProvider` | 👀 Read-only | Monitor stream values |
-| Custom Providers | 👀 Read-only | Display current value |
-
-## 🚧 **Coming Soon (Phase 2)**
-
-- **🌐 External Browser Panel** - Control from separate web interface
-- **⏰ Time Travel Debugging** - Scrub through state history
-- **🔄 Auto-save Scenarios** - Automatically save interesting states
-- **📈 Performance Metrics** - Track provider update performance
-- **🌍 Multi-app Support** - Debug multiple Flutter apps simultaneously
+### **Coming Soon**
+- **Sugar UI**: Pre-built, customizable widgets for common use cases
+- **Sugar Connect**: HTTP/API utilities with built-in error handling
+- **Sugar Themer**: Advanced theming system with design tokens
+- **Sugar Slices**: Enhanced Riverpod state management patterns
 
 ## 🤝 **Contributing**
 
-We welcome contributions! This tool can revolutionize Flutter development, and we need your help to make it amazing.
+We welcome contributions to the Sugar ecosystem! Each package has its own repository:
 
-### **Ideas for Contributors:**
-- Support for more state management libraries (Bloc, Provider, GetX)
-- Enhanced UI for the dev panel
-- Integration with existing developer tools
-- Performance optimizations
-- More state serialization formats
+- **sugar_fast** (this hub): [mukhbit0/sugar_fast](https://github.com/mukhbit0/sugar_fast)
+- **riverpod_sugar**: [Contribute here](https://pub.dev/packages/riverpod_sugar)
+- More packages coming soon...
 
-## 📝 **Migration from 1.x**
+### **Contribution Guidelines**
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-Sugar Fast 2.0 is a complete rewrite focused on developer tooling. If you were using 1.x widgets:
+## 📄 **License**
 
-```dart
-// 1.x (widgets)
-SugarText('Hello')
+MIT License - see [LICENSE](LICENSE) for details.
 
-// 2.x (use regular Flutter widgets + state editing)
-Text('Hello')  // Edit the text state live in Sugar Fast panel!
-```
+## 🔗 **Links**
 
-## 📜 **License**
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
----
-
-## 💡 **Why "Sugar Fast"?**
-
-- **🍭 Sweet** - Makes development delightful
-- **⚡ Fast** - Instant state changes without rebuilds
-- **🎯 Simple** - Zero-config setup for most use cases
-
-**Transform your Flutter debugging workflow today!** 
-
-*No more `print` statements. No more manual state setup. Just pure, sweet, fast state editing.* 🍭⚡
+- [Pub.dev Package](https://pub.dev/packages/sugar_fast)
+- [GitHub Repository](https://github.com/mukhbit0/sugar_fast)
+- [Issue Tracker](https://github.com/mukhbit0/sugar_fast/issues)
+- [Changelog](CHANGELOG.md)
 
 ---
 
-Made with ❤️ for the Flutter community
+<p align="center">
+  <strong>Built with ❤️ for the Flutter community</strong><br>
+  Making Flutter development faster, one package at a time.
+</p>

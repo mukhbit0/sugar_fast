@@ -1,16 +1,40 @@
-# sugar_fast_example
+# Sugar Fast Hub - Example App
 
-A new Flutter project.
+This example demonstrates how to use **Sugar Fast** as a meta-package hub for the Sugar ecosystem.
 
-## Getting Started
+## What This Example Shows
 
-This project is a starting point for a Flutter application.
+- 🚀 **Sugar Fast Hub initialization** - One call to get the entire Sugar ecosystem
+- 🍰 **Riverpod Sugar usage** - Currently available through the hub
+- 🎯 **Simple, clean setup** - No complex configuration needed
 
-A few resources to get you started if this is your first Flutter project:
+## Running This Example
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Navigate to the example directory:
+   ```bash
+   cd example
+   ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+2. Get dependencies:
+   ```bash
+   flutter pub get
+   ```
+
+3. Run the app:
+   ```bash
+   flutter run
+   ```
+
+## Key Features Demonstrated
+
+- **Hub Package Structure** - How Sugar Fast bundles multiple packages
+- **Riverpod Sugar Integration** - Enhanced state management utilities
+- **Future Ecosystem** - Placeholder for upcoming Sugar packages
+
+## What's Coming
+
+This example will be expanded as more Sugar packages are added to the ecosystem:
+
+- 🧩 **Sugar UI** - Pre-built widget components
+- 🔗 **Sugar Connect** - HTTP/API utilities  
+- 🎨 **Sugar Themer** - Advanced theming system
